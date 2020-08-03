@@ -1,17 +1,44 @@
 /* Header
  ----------------------------------------------------------------------------- */
 .header {
-	background-color: #ccc;
-	padding: 10px 0;
-	@extend %clear_a;
+	// background-color: #ccc;
+	position: absolute;
+	z-index: 5;
+	width: 100%;
+	padding: 4.8em 0 2em;
+	// @extend %clear_a;
+
+	@media (min-width: 768px) {
+		padding: 5.6em 0 2em;
+	}
 
 	&__content {
-		max-width: $container_width;
-		padding-left: 15px;
-		padding-right: 15px;
+		max-width: 60em;
+		padding-left: 2.1em;
+		padding-right: 1em;
 		margin: auto;
 		display: flex;
 		justify-content: space-between;
+		opacity: 0;
+
+		&.animated {
+			animation: 1s slideDown;
+			opacity: 1;
+		}
+
+		@media (min-width: 768px) {
+			padding-left: 1em;
+		}
+	}
+}
+
+.logo {
+	width: 4.6em;
+
+	// filter: invert(100%);
+
+	@media (min-width: 768px) {
+		width: 3.3em;
 	}
 }
 

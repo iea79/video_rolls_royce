@@ -1,21 +1,24 @@
 /* Global variables */
 /* ======================================================================== */
-$main_font_family: "Open Sans";
-$main_color: #000;
-$main_line_height: 1.2;
-$main_font_size: 16px;
-
-$container_width: 1200px;
-
-$footer_height: 60px;
-
 // Color collection for elements
-$color_primary: #7b8287;
+$color_primary: #fefefe;
+$color_seccondary: #707070;
 $color_success: #36a566;
 $color_info: #03a9f4;
 $color_warning: #fca33e;
 $color_danger: #ff1a1a;
 $color_withe: #ffffff;
+
+$main_font_family: "Montserrat";
+$seccond_font_family: "Colus";
+$last_font_family: "Gentlemens Script";
+$main_color: $color_withe;
+$main_line_height: 1.2;
+$main_font_size: 18px;
+
+$container_width: 78.75em;
+
+$footer_height: 0;
 
 $el-colors: (
 	primary: $color_primary, // color for .element__primary
