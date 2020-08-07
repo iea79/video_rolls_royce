@@ -1,6 +1,7 @@
 .home {
     padding: 13.4em 0 13em;
     overflow: hidden;
+    position: relative;
 
     @media (min-width: 768px) {
         padding: 10.4em 0 6em;
@@ -14,6 +15,17 @@
         left: 0;
         overflow: hidden;
         max-width: 100%;
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 40%;
+            background-image: linear-gradient(to top, #000, transparent);
+            z-index: 2;
+        }
 
         @media (min-width: 768px) {
             top: 0;
@@ -45,6 +57,8 @@
 
     &__content {
         @extend .container_center;
+        position: relative;
+        z-index: 3;
     }
 
     .section {

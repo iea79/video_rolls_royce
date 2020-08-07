@@ -35,10 +35,27 @@ $(document).ready(function() {
 		event.preventDefault();
 	});
 
-    $( 'audio' ).audioPlayer({
+    $('audio').audioPlayer({
         strPlay: 'Play',
         strPause: 'Pause',
         strVolume: 'Volume'
+    });
+
+    $('.audioplayer-playpause').on('click', function(e) {
+        $('.audioplayer-playpause').not($(this)).each(function(index, el) {
+            if ($(el).attr('title') === 'Pause') {
+                $(el)
+                    .attr('title', "Play")
+                    .find('a')
+                    .text('Play');
+                $(el)
+                    .closest('.audioplayer')
+                    .removeClass('audioplayer-playing')
+                    .addClass('audioplayer-stopped')
+                    .find('audio')
+                    .trigger('pause');
+            }
+        });
     });
 
     $('.colorCorrection__colorsToggle').on('click', function() {
@@ -58,21 +75,46 @@ $(document).ready(function() {
         }, 1000);
     });
 
-    // const vpc = new ViewportChecker('[data-vp-add-class]');
-    // document.addEventListener('DOMContentLoaded', () => vpc.attach());
-
 
 });
 
-let vpOffset = ($(window).height() / 3).toFixed() * 1;
+let wowOffset = ($(window).height() / 3).toFixed() * 1;
 
-console.log(vpOffset);
+console.log(wowOffset);
+
+var preview = {
+    id: 427324579,
+};
+
+var player1 = new Vimeo.Player('short-video', preview);
+
+$('#previwe').on('show.bs.modal', function() {
+    player1.play();
+});
+
+$('#previwe').on('hide.bs.modal', function() {
+    player1.pause();
+});
+
+var fullVideo = {
+    id: 445510302,
+};
+
+var player2 = new Vimeo.Player('video', fullVideo);
+
+$('#play').on('show.bs.modal', function() {
+    player2.play();
+});
+
+$('#play').on('hide.bs.modal', function() {
+    player2.pause();
+});
 
 var wow = new WOW(
     {
         boxClass:     'wow',      // animated element css class (default is wow)
         animateClass: 'animated', // animation css class (default is animated)
-        offset:       vpOffset,          // distance to the element when triggering the animation (default is 0)
+        offset:       wowOffset,          // distance to the element when triggering the animation (default is 0)
         mobile:       true,       // trigger animations on mobile devices (default is true)
         live:         true,       // act on asynchronously loaded content (default is true)
         callback:     function(box) {

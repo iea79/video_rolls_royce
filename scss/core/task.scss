@@ -42,7 +42,7 @@
             opacity: 0;
 
             &.animated {
-                animation: 2.5s fadeIn;
+                animation: 4s fadeInOut infinite;
                 opacity: 1;
             }
 
