@@ -177,11 +177,12 @@ block content
         .wallpaper__preview
             .wallpaper__video
                 .wallpaper__show И вот что у нас получилось
-                video.home__video(width="100%" allowfullscreen="true" muted="muted" autoplay="autoplay" playsinline="playsinline" loop="loop")
-                    source(src="media/main-video.mp4" type="video/mp4")
-                    source(src="media/main-video.webm" type="video/webm")
-                    source(src="media/main-video.m4v" type="video/mp4")
-                    source(src="media/main-video.ogv" type="video/ogg")
+                img.home__video(src="img/RR_CG.gif", alt="")
+                //- video.home__video(width="100%" allowfullscreen="true" muted="muted" autoplay="autoplay" playsinline="playsinline" loop="loop")
+                //-     source(src="media/main-video.mp4" type="video/mp4")
+                //-     source(src="media/main-video.webm" type="video/webm")
+                //-     source(src="media/main-video.m4v" type="video/mp4")
+                //-     source(src="media/main-video.ogv" type="video/ogg")
 
 
     // end wallpaper
@@ -282,16 +283,16 @@ block content
         .colorCorrection__slider
             .colorCorrection__item#green
                 //- |green
-                img(src="img/color-green.jpg", alt="" loading="lazy")
+                img(src="img/color-green.jpg", alt="")
             .colorCorrection__item#cold
                 //- |cold
-                img(src="img/color-cold.jpg", alt="" loading="lazy")
+                img(src="img/color-cold.jpg", alt="")
             .colorCorrection__item.active#original
                 //- |original
-                img(src="img/color-original.jpg", alt="" loading="lazy")
+                img(src="img/color-original.jpg", alt="")
             .colorCorrection__item#gold
                 //- |gold
-                img(src="img/color-gold.jpg", alt="" loading="lazy")
+                img(src="img/color-gold.jpg", alt="")
 
     // end colorCorrection
 
